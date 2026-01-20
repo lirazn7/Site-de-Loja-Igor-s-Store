@@ -46,10 +46,10 @@ header nav ul li {
 header nav ul li::after {
     content: '';
     position: absolute;
-    left: 0px;
+    left: 0;
     bottom: 0;
-    width: 0px;
-    height: 2px;
+    width: 0;
+    height: 2;
     background-color: #ff3e3e;
     transition: width 0.2s ease;
 }
@@ -74,6 +74,7 @@ header nav ul li:hover::after {
     background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, rgba(39, 15, 15, 0) 70%);
     top: 50%;
     left: 50%;
+    pointer-events: none;
     transform: translate(-50%, -50%);
     filter: blur(50px);
     z-index: 1;
@@ -106,7 +107,6 @@ header nav ul li:hover::after {
     justify-content: center;
     align-items: center;
     opacity: 0;
-
 
     /* Animacao*/
     transform: translateX(100vw);
@@ -211,21 +211,11 @@ header nav ul li:hover::after {
     cursor: pointer;
     border: none;
     transition: all 0.3s ease;
-            /* Hora de Animar */
-    transform: translateX(350px);
-    opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    transition-delay: 0.5s;
 }
 
-.active .btn {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.active .btn:hover {
-    transform: translateX(300px) scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 62, 62, 0.8);
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 62, 62, 0.6);
 }
 
 .arrows {
